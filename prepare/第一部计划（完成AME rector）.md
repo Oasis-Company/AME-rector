@@ -1,0 +1,1 @@
+AME rector是AME的一个组件
