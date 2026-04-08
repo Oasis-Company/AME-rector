@@ -1,0 +1,55 @@
+/* ─── Workbench ──────────────────────────────────────────────────────── */
+
+.workbench {
+  margin-top: var(--menubar-h);
+  height: calc(100vh - var(--menubar-h));
+  background: var(--c-bg);
+  display: flex;
+  overflow: hidden;
+}
+
+.workbench__panels {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Each panel slot */
+.workbench__slot {
+  display: flex;
+  flex-direction: column;
+  min-width: var(--panel-w);
+  max-width: var(--panel-w);
+  border-right: 1px solid var(--c-border);
+  background: var(--c-bg);
+  overflow: hidden;
+}
+
+.workbench__slot:first-child {
+  border-left: 1px solid var(--c-border);
+}
+
+/* Empty state */
+.workbench__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-1);
+}
+
+.workbench__empty-msg {
+  color: var(--c-text-dim);
+  font-size: var(--fs-sm);
+}
+
+.workbench__empty-sub {
+  color: var(--c-text-dim);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,107 @@
+/* ─── TopMenuBar ──────────────────────────────────────────────────────── */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--menubar-h);
+  background: var(--c-menubar-bg);
+  border-bottom: 1px solid var(--c-border);
+  display: flex;
+  align-items: stretch;
+  z-index: 100;
+}
+
+.top-bar__left {
+  display: flex;
+  align-items: stretch;
+}
+
+.top-bar__right {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+}
+
+/* ─── Menu items ── */
+.top-bar__item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.top-bar__btn {
+  height: 100%;
+  padding: 0 var(--sp-2);
+  color: var(--c-menubar-text);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-bar__btn:hover {
+  background: var(--c-menubar-hover);
+}
+
+/* ─── Divider between left/right groups ── */
+.top-bar__sep {
+  width: 1px;
+  background: #333333;
+  margin: 8px 0;
+}
+
+/* ─── Dropdown ── */
+.top-bar__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #111111;
+  border: 1px solid var(--c-border);
+  z-index: 200;
+  list-style: none;
+}
+
+.top-bar__dropdown--right {
+  left: auto;
+  right: 0;
+}
+
+.top-bar__dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px var(--sp-2);
+  color: var(--c-menubar-text);
+  font-size: var(--fs-md);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-bar__dropdown-item:hover {
+  background: var(--c-menubar-hover);
+}
+
+/* ─── Add button (+) ── */
+.top-bar__add-btn {
+  height: 100%;
+  padding: 0 var(--sp-2);
+  color: var(--c-menubar-text);
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-bar__add-btn:hover {
+  background: var(--c-menubar-hover);
+}

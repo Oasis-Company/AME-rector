@@ -1,0 +1,305 @@
+/* ─── RectorPanel ────────────────────────────────────────────────────── */
+
+.rector {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--c-bg);
+}
+
+/* ─── Header ── */
+.rector__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--header-h);
+  padding: 0 var(--sp-2);
+  border-bottom: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+
+.rector__name {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+
+.rector__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot-idle);
+  flex-shrink: 0;
+}
+
+.rector__status {
+  font-size: var(--fs-xs);
+  color: var(--c-text-mid);
+  margin-left: auto;
+}
+
+/* ─── Body ── */
+.rector__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* ─── Drop Zone ── */
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  height: 160px;
+  border: 1.5px dashed var(--c-border-hi);
+  cursor: pointer;
+  transition: border-color 0.1s;
+  user-select: none;
+}
+
+.dropzone:hover,
+.dropzone--dragover {
+  border-color: var(--c-text);
+}
+
+.dropzone__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--c-text-mid);
+}
+
+.dropzone__label {
+  font-size: var(--fs-sm);
+  color: var(--c-text-mid);
+  text-align: center;
+}
+
+.dropzone__hint {
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  text-align: center;
+}
+
+.dropzone--dragover .dropzone__label {
+  color: var(--c-text);
+}
+
+/* ─── Config Section ── */
+.config {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.config__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.config__label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-mid);
+}
+
+.config__input {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  outline: none;
+  transition: border-color 0.1s;
+}
+
+.config__input:focus {
+  border-color: var(--c-text);
+}
+
+.config__desc {
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+}
+
+.config__select {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.config__select:focus {
+  border-color: var(--c-text);
+}
+
+/* ─── File Preview ── */
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+}
+
+.file-preview__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--c-text-mid);
+  flex-shrink: 0;
+}
+
+.file-preview__name {
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-preview__type {
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.file-preview__clear {
+  width: 20px;
+  height: 20px;
+  color: var(--c-text-mid);
+  cursor: pointer;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-preview__clear:hover {
+  color: var(--c-text);
+}
+
+/* ─── Action row ── */
+.rector__actions {
+  display: flex;
+  gap: var(--sp-1);
+  padding-top: var(--sp-1);
+  border-top: 1px solid var(--c-border);
+}
+
+.btn {
+  padding: 8px var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-mid);
+  transition: border-color 0.1s, color 0.1s;
+  flex: 1;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--c-text);
+  color: var(--c-text);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--c-text);
+  color: var(--c-bg);
+  border-color: var(--c-text);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: #333333;
+  border-color: #333333;
+  color: var(--c-bg);
+}
+
+/* ─── Processing / Done / Error ── */
+.state-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-3);
+  text-align: center;
+}
+
+.state-view__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dot-processing);
+}
+
+.state-view__dot--pulse {
+  animation: dot-pulse 1.2s ease-in-out infinite;
+}
+
+.state-view__stage {
+  font-size: var(--fs-sm);
+  color: var(--c-text-mid);
+}
+
+.state-view__progress {
+  width: 100%;
+  height: 2px;
+  background: var(--c-border);
+  overflow: hidden;
+}
+
+.state-view__progress-bar {
+  height: 100%;
+  background: var(--c-text);
+  transition: width 0.3s linear;
+}
+
+.state-view__done-msg {
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+}
+
+.state-view__error-msg {
+  font-size: var(--fs-xs);
+  color: #c00;
+  padding: var(--sp-2);
+  border: 1px solid #c00;
+  width: 100%;
+  text-align: left;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
